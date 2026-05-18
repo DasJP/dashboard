@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import AppShell from "@/Components/layout/AppShell";
+import AppShell from "@/components/layout/AppShell";
 import Overview from "@/pages/Overview";
 import Analytics from "@/pages/Analytics";
 import Products from "@/pages/Products";

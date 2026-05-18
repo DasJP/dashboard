@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Moon, Sun } from "lucide-react";
-
+import { Moon, Sun, Menu } from "lucide-react";
 
 const pageTitles = {
   "/overview": "Overview",
@@ -10,7 +9,7 @@ const pageTitles = {
   "/reports": "Reports",
 };
 
-export default function TopBar() {
+export default function TopBar({ onMenuToggle }) {
   const location = useLocation();
   const [isDark, setIsDark] = useState(false);
 
@@ -23,6 +22,14 @@ export default function TopBar() {
 
   return (
     <header className="flex items-center justify-between px-6 py-4 bg-card border-b border-border shrink-0">
+      <button
+        onClick={onMenuToggle}
+        className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg border border-border text-muted-foreground hover:bg-muted transition-colors duration-200"
+        aria-label="Toggle menu"
+      >
+        <Menu size={18} />
+      </button>
+
       <div>
         <h1 className="text-lg font-semibold text-foreground">{title}</h1>
         <p className="text-xs text-muted-foreground mt-0.5">
